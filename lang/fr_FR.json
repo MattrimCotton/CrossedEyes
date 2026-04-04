@@ -1,0 +1,863 @@
+{
+    "crossedeyes": "CrossedEyes",
+    "opts": {
+        "lockDiorbitalMenu": { "name": "Verrouiller le menu rapide", "description": "Verrouille la disposition des boutons du menu rapide CCUILib." },
+        "spacialAudio": { "name": "Audio spatial", "description": "Permet de distinguer clairement la direction d'où provient le son." },
+        "loudWalls": { "name": "Sons des murs", "description": "Fait émettre un bip directionnel aux murs lorsque vous vous en approchez." },
+        "loudEntities": { "name": "Sons des entités", "description": "Fait émettre des sons aux entités lorsque vous êtes à proximité." },
+        "hints": { "name": "Système d'indices", "description": "Le système d'indices vous permet de savoir quels objets se trouvent autour de vous." },
+        "textBeeping": { "name": "Bip de texte", "description": "Active le bip sonore lorsque des personnages parlent." },
+        "disableIdlePose": {
+            "name": "Désactiver la pose d'inactivité",
+            "description": "Désactive l'animation qui fait pivoter le joueur vers le sud-est après 10 secondes d'inactivité."
+        },
+        "hudVisible": { "name": "Visibilité du bouton CrossedEyes", "description": "Affiche le bouton CrossedEyes dans le menu pause." },
+        "enemyVulnerableMulti": { "name": "Multiplicateur de vulnérabilité ennemie", "description": "Prolonge la durée de vulnérabilité des ennemis." },
+        "tts": { "name": "Activer la synthèse vocale", "description": "Active la synthèse vocale." },
+        "ttsType": { "name": "Type de synthèse vocale", "description": "Type de lecteur, nécessite un redémarrage !", "buttonNames": ["Web Speech", "NVDA"] },
+        "ttsChar": { "name": "Lire les dialogues", "description": "Lire le texte des personnages." },
+        "ttsSpeed": { "name": "Vitesse de la synthèse vocale", "description": "Vitesse de la synthèse vocale." },
+        "ttsVolume": { "name": "Volume de la synthèse vocale", "description": "Volume de la synthèse vocale (peut ne pas fonctionner)." },
+        "ttsPitch": { "name": "Tonalité de la synthèse vocale", "description": "Tonalité de la synthèse vocale." },
+        "footstepVolume": { "name": "Volume des pas", "description": "Multiplicateur du volume des pas." },
+        "jumpVolume": { "name": "Volume des sauts", "description": "Multiplicateur du volume des sauts." },
+        "dashVoulme": { "name": "Volume des esquives", "description": "Multiplicateur du volume des esquives." },
+        "wallVolume": { "name": "Volume des murs", "description": "Multiplicateur du volume des murs." },
+        "wallBumpVolume": { "name": "Volume des collisions avec les murs", "description": "Multiplicateur du volume des collisions avec les murs." },
+        "cliffSafeguardVolume": { "name": "Volume du garde-falaise", "description": "Multiplicateur du volume du garde-falaise." },
+        "jumpHintsVolume": { "name": "Volume des indices de saut", "description": "Multiplicateur du volume des indices de saut." },
+        "wallScanVolume": { "name": "Volume du scan de mur", "description": "Multiplicateur du volume du scan de mur." },
+        "hintsVolume": { "name": "Volume des indices", "description": "Multiplicateur du volume des indices." },
+        "interactableVolume": { "name": "Volume des interactions", "description": "Multiplicateur du volume des interactions." },
+        "entityHintsVolume": { "name": "Volume des indices d'entités", "description": "Multiplicateur du volume des indices d'entités." }
+    },
+    "optsCategories": {
+        "general": "Général",
+        "volumes": "Volumes",
+        "tts": "Synthèse vocale",
+        "functionality": "Fonctionnalités"
+    },
+    "logupload": {
+        "uploading": "Envoi en cours...",
+        "copied": "Lien du journal copié dans le presse-papiers"
+    },
+    "enviroment": {
+        "unmappedInteractHint": "Indice d'interaction non cartographié",
+        "mapEnterTemplate": "carte : {map}",
+        "mapEnterNewTemplate": "nouvelle carte : {map}",
+        "mapEnterAreaTemplate": "zone : {area} : "
+    },
+    "menu": {
+        "levelup": "Niveau supérieur !",
+        "dialog": "Dialogue : ${0}, ${1}",
+        "dialogNoOptions": "Dialogue : {text}",
+        "oneItemRecivedTemplate": "Objet {rarity} {type} reçu : {itemName}",
+        "multipleItemsRecivedTemplate": "{count} objets {rarity} {type} reçus : {itemName}",
+        "itemRarityMap": {
+            "LOW": "commun",
+            "NORMAL": "normal",
+            "RARE": "rare",
+            "LEGENDARY": "légendaire",
+            "UNIQUE": "unique",
+            "BACKER": "soutien",
+            "SCALE": "évolutif"
+        },
+        "itemTypesMap": {
+            "CONS": "consommable",
+            "EQUIP": "équipable",
+            "TRADE": "échangeable",
+            "KEY": "clé",
+            "TOGGLE": "activable"
+        },
+        "save": {
+            "template1": "Emplacement {name}, chapitre {chapter}, {location}",
+            "template2": "niveau {level}, temps de jeu {playtime}",
+            "playtimeTemplate": "{minutes} minutes.",
+            "playtimeWithHoursTemplate": "{hours} heures, {minutes} minutes.",
+            "createNewSaveFile": "Créer une nouvelle sauvegarde"
+        },
+        "options": {
+            "firstOpen": "Menu options, catégorie Général : ${0}",            "categorySwitch": "Catégorie ${0} : ${1}",
+            "buttonGroup": "Groupe de boutons",
+            "slider": "Curseur",
+            "keybinding": "Raccourci clavier",
+            "checkbox": "Case à cocher",
+            "helpSuffix": "Ouvrez le menu du mod avec \\i[gamepad-y]."
+        },
+        "fontImgToTextMap": {
+            "left-stick": "Manette : stick gauche,",
+            "right-stick": "Manette : stick droit,",
+            "gamepad-left": "D-pad : gauche,",
+            "left": "D-pad : gauche",
+            "gamepad-down": "D-pad : bas,",
+            "gamepad-right": "D-pad : droite,",
+            "right": "D-pad : droite",
+            "gamepad-up": "D-pad : haut,",
+            "gamepad-l1": "Manette : L1,",
+            "dash": "Manette : L1,",
+            "gamepad-r1": "Manette : R1,",
+            "throw": "Manette : R1,",
+            "gamepad-l2": "Manette : L2,",
+            "gamepad-r2": "Manette : R2,",
+            "gamepad-pause": "Manette : pause,",
+            "gamepad-select": "Manette : sélect,",
+            "gamepad-a": "Manette : A,",
+            "gamepad-b": "Manette : B,",
+            "gamepad-x": "Manette : X,",
+            "gamepad-y": "Manette : Y,",
+            "gamepad-dualshock-x": "Manette : carré,",
+            "gamepad-dualshock-y": "Manette : triangle,",
+            "gamepad-dualshock-b": "Manette : rond,",
+            "gamepad-dualshock-a": "Manette : croix,",
+            "left-stick-left": "Manette : stick gauche : gauche,",
+            "left-stick-right": "Manette : stick gauche : droite,",
+            "left-stick-press": "Manette : stick gauche : appui,",
+            "right-stick-press": "Manette : stick droit : appui,",
+            "gamepad-l1-off": "Manette : L1 relâché,",
+            "gamepad-r1-off": "Manette : R1 relâché,",
+            "key-throw": "Souris : clic droit",
+            "twitter": "twitter",
+            "mousewheel": "Molette de souris",
+            "item-helm": "casque : ",
+            "item-shoe": "bottes : ",
+            "item-belt": "torse : ",
+            "item-sword": "épée : ",
+            "item-items": "Consommable commun : ",
+            "item-items-normal": "Consommable normal : ",
+            "item-items-rare": "Consommable rare : ",
+            "item-items-legend": "Consommable légendaire : ",
+            "item-items-backer": "Consommable soutien : "
+        },
+        "soundglossary": {
+            "name": "Glossaire sonore",
+            "firstOpen": "Glossaire sonore, catégorie {category} : ${0}",
+            "helpTitle": "Glossaire sonore",
+            "helpDescription": [
+                {
+                    "content": [
+                        "Pour activer ou désactiver l'élément sélectionné, appuyez sur \\i[gamepad-a].\n Naviguez vers le haut ou le bas avec \\i[left-stick].\n Lisez la description du son avec \\i[left-stick-press].\n Changez de catégorie sonore avec \\i[gamepad-l1] et \\i[gamepad-r1].\n Certains sons sont directionnels : déplacer \\i[left-stick] fera venir le son de la direction correspondante.\n Certains sons ont une version à tonalité plus basse lorsque vous leur tournez le dos : pour l'entendre, faites pivoter le joueur avec \\i[right-stick]."
+                    ]
+                }
+            ],
+            "categories": {
+                "Navigation": "Navigation",
+                "Combat": "Combat",
+                "Puzzle": "Énigme",
+                "Entities": "Entités",
+                "Hints": "Indices",
+                "Menu": "Menu"
+            },            "entries": {
+                "Navigation": {
+                    "wall": {
+                        "name": "Mur",
+                        "description": "Se joue au niveau du mur s'il y en a un.\n Vérifie quatre directions : nord, est, sud et ouest.\n Les directions ne dépendent pas du sens où le joueur est orienté.\n Plus vous êtes proche, plus le son est fort.\n Lorsque le joueur tourne le dos au mur, une version à tonalité plus basse est jouée."
+                    },
+                    "jump": {
+                        "name": "Saut",
+                        "description": "Le joueur saute automatiquement juste avant le bord.\n Peut varier selon le terrain depuis lequel vous sautez."
+                    },
+                    "collision": {
+                        "name": "Collision",
+                        "description": "Se joue lorsque vous heurtez un obstacle qui bloque votre mouvement.\n Plus l'obstacle bloque votre déplacement, plus le son est fort."
+                    },
+                    "cliffSafeguard": {
+                        "name": "Garde-falaise",
+                        "description": "Se joue lorsque le garde-falaise vous empêche de tomber d'une falaise."
+                    },
+                    "jumphintWater": {
+                        "name": "Indice de saut : eau",
+                        "description": "Dans 8 directions autour du joueur, ce son se joue à chaque emplacement où le joueur tomberait dans l'eau.\n Les directions sont orientées selon le sens du joueur.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    },
+                    "jumphintHole": {
+                        "name": "Indice de saut : trou",
+                        "description": "Dans 8 directions autour du joueur, ce son se joue à chaque emplacement où le joueur tomberait dans un trou.\n Les directions sont orientées selon le sens du joueur.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    },
+                    "jumphintLower": {
+                        "name": "Indice de saut : niveau inférieur",
+                        "description": "Dans 8 directions autour du joueur, ce son se joue à chaque emplacement où le joueur descendrait vers un niveau Y inférieur.\n Cela peut indiquer des escaliers vers le bas ou une plateforme plus basse.\n Les directions sont orientées selon le sens du joueur.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    },
+                    "jumphintHigher": {
+                        "name": "Indice de saut : niveau supérieur",
+                        "description": "Dans 8 directions autour du joueur, ce son se joue à chaque emplacement où le joueur monterait vers un niveau Y supérieur.\n Cela peut indiquer des escaliers vers le haut ou une plateforme plus haute.\n Les directions sont orientées selon le sens du joueur.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    },
+                    "jumphintPlatform": {
+                        "name": "Indice de saut : plateforme",
+                        "description": "Dans 8 directions autour du joueur, ce son se joue à chaque emplacement où le joueur sauterait par-dessus un trou pour atterrir sur une plateforme.\n Les directions sont orientées selon le sens du joueur.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    }
+                },
+                "Combat": {
+                    "melee": {
+                        "name": "Attaque au corps à corps",
+                        "description": "Vous attaquez avec \\i[gamepad-x] ou \\i[gamepad-r1].\n Après 3 attaques rapides consécutives, la quatrième sera une rotation multi-directionnelle infligeant plus de dégâts, mais vous laissant vulnérable pendant une demi-seconde."
+                    },
+                    "dash": {
+                        "name": "Esquive",
+                        "description": "Vous esquivez avec \\i[gamepad-l1].\n Vous pouvez esquiver jusqu'à trois fois de suite ; au-delà, vous devez attendre sinon vous commencerez à tournoyer en couvrant très peu de distance."
+                    },
+                    "levelup": {
+                        "name": "Niveau supérieur",
+                        "description": "Vous montez de niveau après avoir accumulé plus de 1000 points d'expérience depuis le dernier niveau.\n Une animation se joue et annonce les statistiques gagnées."
+                    }
+                },
+                "Puzzle": {
+                    "puzzle": {
+                        "name": "Éléments d'énigme frappables",
+                        "description": "Se joue au niveau de divers éléments d'énigme que vous pouvez frapper.\n Vous pouvez les frapper avec une balle ou une attaque au corps à corps.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    },
+                    "switch": {
+                        "name": "Activation d'un interrupteur",
+                        "description": "Se joue lorsque vous activez un interrupteur."
+                    },
+                    "barrierGoUp": {
+                        "name": "Barrière activée",
+                        "description": "Se joue lorsqu'une barrière s'active."
+                    },
+                    "barrierGoDown": {
+                        "name": "Barrière désactivée",
+                        "description": "Se joue lorsqu'une barrière se désactive."
+                    },
+                    "OLPlatformMove": {
+                        "name": "Bloc mobile",
+                        "description": "Se joue lorsque le bloc mobile s'étend ou se rétracte."
+                    },
+                    "BallChanger_CHANGE_DIR": {
+                        "name": "Changeur de direction de balle",
+                        "description": "Se joue lorsqu'une balle entre dans un changeur de direction."
+                    },
+                    "BallChanger_CHANGE_SPEED_UP": {
+                        "name": "Accélérateur de balle",
+                        "description": "Se joue lorsqu'une balle entre dans un accélérateur."
+                    },
+                    "BallChanger_CHANGE_SPEED_DOWN": {
+                        "name": "Décélérateur de balle",
+                        "description": "Se joue lorsqu'une balle entre dans un décélérateur."
+                    }
+                },                "Entities": {
+                    "interactableNearby": {
+                        "name": "Interaction à proximité",
+                        "description": "Se joue lorsque quelque chose avec lequel vous pouvez interagir est à proximité."
+                    },
+                    "interactable": {
+                        "name": "Interaction possible",
+                        "description": "Se joue lorsque vous pouvez interagir avec quelque chose.\n Utilisez \\i[gamepad-a] pour interagir."
+                    },
+                    "tpr": {
+                        "name": "Porte ou chemin vers une autre carte",
+                        "description": "Se joue au niveau des portes ou des chemins."
+                    },
+                    "enemy": {
+                        "name": "Ennemi",
+                        "description": "Se joue au niveau des ennemis.\n Lorsque le joueur tourne le dos à l'entité, une version à tonalité plus basse est jouée."
+                    },
+                    "enemyDeath": {
+                        "name": "Mort d'un ennemi",
+                        "description": "Se joue lorsqu'un ennemi meurt."
+                    }
+                },
+                "Hints": {
+                    "hint": {
+                        "name": "Indice",
+                        "description": "Se joue lorsqu'un indice est sélectionné.\n Lorsque le joueur tourne le dos à l'indice, une version à tonalité plus basse est jouée."
+                    },
+                    "wallscan": {
+                        "name": "Scan de mur",
+                        "description": "Pour activer le scan de mur, ouvrez le menu rapide avec \\i[gamepad-l2] et appuyez sur \\i[gamepad-y].\n Lorsque le scan de mur est actif, le son se joue au niveau du mur que vous visez."
+                    }
+                },
+                "Menu": {
+                    "denied": {
+                        "name": "Bouton refusé",
+                        "description": "Se joue lorsque vous appuyez sur un bouton désactivé."
+                    }
+                }
+            }
+        },
+        "equipment": {
+            "prependHelpPages": [
+                {
+                    "title": "Menu équipement : CrossedEyes",
+                    "content": [
+                        "Lisez la description de l'équipement avec \\i[left-stick-press].\n Lisez les changements de statistiques apportés par un équipement avec \\i[gamepad-r2].\n Lisez les changements de modificateurs apportés par un équipement avec \\i[gamepad-l2].\n Les pages suivantes sont les pages d'aide originales."
+                    ]
+                }
+            ],
+            "noStatChanges": "Aucun changement de statistiques.",
+            "noModifierChanges": "Aucun changement de modificateurs."
+        },
+        "quickMenu": {
+            "name": "Menu rapide",
+            "widgets": {
+                "yLevel": {
+                    "title": "Annoncer le niveau Y",
+                    "description": "Obtenir la coordonnée Y actuelle du joueur.",
+                    "announceTemplate": "{y}"
+                },
+                "aimAnalysis": {
+                    "title": "Analyse de visée",
+                    "description": "Met en évidence les indices que vous visez directement."
+                },
+                "aimBounce": {
+                    "title": "Rebond de visée",
+                    "description": "Simule le rebond d'une balle et met en évidence les indices qu'elle a touchés."
+                },
+                "wallScan": {
+                    "title": "Scan de mur",
+                    "description": "Joue un son au niveau du mur que vous visez."
+                },
+                "cliffSafeguard": {
+                    "title": "Garde-falaise",
+                    "description": "Vous empêche de sauter et de tomber des falaises."
+                }
+            },            "itemHelpPages": [
+                {
+                    "title": "Objets du menu rapide",
+                    "content": [
+                        "Naviguez dans la liste des consommables avec \\i[gamepad-down] et \\i[gamepad-up].\n Appuyez sur \\i[gamepad-x] pour utiliser l'objet.\n Lisez la description du consommable avec \\i[left-stick-press].\n Lisez les effets d'un objet avec \\i[gamepad-r2]."
+                    ]
+                }
+            ],
+            "analysisHelpPages": [
+                {
+                    "title": "Analyse du menu rapide : Bases",
+                    "content": [
+                        "Naviguez parmi les indices avec \\i[gamepad-l1] et \\i[gamepad-r1].\n Lorsqu'un indice est mis en évidence, un son continu se joue à son emplacement.\n Lisez la description de l'indice avec \\i[left-stick-press]."
+                    ]
+                },
+                {
+                    "title": "Sons des indices",
+                    "content": [
+                        "La vitesse des sons d'indices continus varie selon votre position Y relative.\n Plus le joueur est bas par rapport à l'indice, plus le son est lent.\n Plus le joueur est haut par rapport à l'indice, plus le son est rapide.\n Lorsque vous tournez le dos à l'indice, la tonalité du son continu diminue."
+                    ]
+                },
+                {
+                    "title": "Sélectionner des indices",
+                    "content": ["Pour sélectionner ou désélectionner un indice, appuyez sur \\i[gamepad-x].\n Les indices sélectionnés restent mis en évidence même après la fermeture du menu rapide.\n "]
+                },
+                {
+                    "title": "Widget : Analyse de visée",
+                    "content": ["Lorsque l'analyse de visée est activée, les indices que vous visez directement sont mis en évidence.\n L'indice se désactive lorsque vous regardez ailleurs."]
+                },
+                {
+                    "title": "Widget : Rebond de visée",
+                    "content": [
+                        "Le rebond de visée n'a d'effet que lorsque l'analyse de visée est active.\n Ce mode simule le rebond d'une balle sur les murs et les éléments d'énigme.\n Il annonce ce sur quoi la balle a rebondi et met en évidence le dernier indice touché."
+                    ]
+                },
+                {
+                    "title": "Filtrage des indices",
+                    "content": [
+                        "Vous pouvez filtrer les indices par catégories.\n Utilisez \\i[gamepad-left] et \\i[gamepad-right] pour changer la catégorie de filtre.\n Appuyez sur \\i[gamepad-up] pour annoncer le filtre de catégorie actuel.\n "
+                    ]
+                },
+                {
+                    "title": "Filtrage des énigmes et combats",
+                    "content": [
+                        "Vous pouvez choisir de n'afficher que les indices dans et près des zones d'énigmes ou de combats ennemis.\n Cela masque les indices non pertinents pour mieux vous concentrer sur la tâche en cours.\n Activez-le avec \\i[gamepad-down].\n Il est inactif si vous n'êtes pas à proximité d'énigmes ou de combats.\n Le filtrage des énigmes est inactif si l'énigme est déjà résolue.\n Le filtrage des combats est inactif si vous n'êtes pas en mode combat.\n Notez que pour fonctionner, les énigmes et combats doivent avoir été cartographiés manuellement par le développeur."
+                    ]
+                }
+            ],
+            "noneHelpPages": [
+                {
+                    "title": "Menu rapide",
+                    "content": [
+                        "Bienvenue dans le menu rapide !\n Naviguez dans la roue de widgets avec \\i[left-stick].\n Activez les widgets avec \\i[gamepad-a].\n Le menu rapide a 2 anneaux.\n Passez de l'un à l'autre avec \\i[gamepad-r1] et \\i[gamepad-l1].\n "
+                    ]
+                },
+                {
+                    "title": "Widget : Scan de mur",
+                    "content": [
+                        "Lorsque le scan de mur est actif, un son de mur se joue au premier mur dans la direction visée.\n Les sons de mur normaux et les indices de saut sont également mis en sourdine lors du visé avec ce mode actif."
+                    ]
+                },
+                {
+                    "title": "Widget : Passer l'énigme",
+                    "content": [
+                        "Lorsque vous êtes près d'une énigme, vous pouvez la résoudre immédiatement avec ce widget.\n Notez que pour qu'une énigme soit passable, elle doit avoir été cartographiée manuellement par le développeur : toutes les énigmes ne sont pas encore disponibles."
+                    ]
+                },
+                {
+                    "title": "Widget : Niveau Y du joueur",
+                    "content": [
+                        "Ce widget annonce la coordonnée Y actuelle du joueur.\n Pour référence, le joueur peut sauter sur une marche de 16 unités de hauteur.\n Peut être utile dans les sections de plateforme."
+                    ]
+                },
+                {
+                    "title": "Autres widgets",
+                    "content": [
+                        "Les widgets non expliqués ici sont expliqués ailleurs.\n Par exemple, les widgets Analyse de visée et Rebond de visée sont expliqués dans les pages d'aide du menu d'analyse."
+                    ]
+                }
+            ]
+        },        "modMenu": {
+            "mod": "Mod",
+            "enabled": "Activé",
+            "disabled": "Désactivé",
+            "selected": "Sélectionné",
+            "awaitingRestart": "en attente de redémarrage",
+            "hasUpdateAvailible": "mise à jour disponible",
+            "empty": "Vide",
+            "lastUpdated": "Dernière mise à jour",
+            "version": "Version",
+            "stars": "Étoiles",
+            "tags": "Étiquettes",
+            "author": "Auteur",
+            "authors": "Auteurs",
+            "testingOn": "Tests activés",
+            "testingOff": "Tests désactivés"
+        },
+        "nextPage": "Page suivante disponible...",
+        "noMorePages": "Aucune page supplémentaire."
+    },
+    "tts": {
+        "nvdaConnected": "NVDA connecté."
+    },
+    "stats": {
+        "unknownStats": "statistiques inconnues",
+        "noElementalResistances": "aucune résistance élémentaire",
+        "resistanceTemplate": "{percentage} % {element}",
+        "resistance": "résistance",
+        "statTemplate": "niveau {level}, {hp} points de vie max, {defense} défense, {attack} attaque, {focus} concentration.",
+        "level": "Niveau",
+        "circuitPoints": "Points de circuit",
+        "health": "Points de vie",
+        "attack": "Attaque",
+        "defense": "Défense",
+        "focus": "Concentration",
+        "cold": "froid",
+        "heat": "chaleur",
+        "shock": "électricité",
+        "wave": "onde",
+        "neutral": "neutre",
+        "statDifferenceTemplate": "{sign} {value} {statName}",
+        "buffTemplate": "pendant {duration} secondes : {buffs}"
+    },
+    "misc": {
+        "face8": {
+            "NORTH": "Nord",
+            "EAST": "Est",
+            "SOUTH": "Sud",
+            "WEST": "Ouest",
+            "NORTH_EAST": "Nord-est",
+            "SOUTH_EAST": "Sud-est",
+            "SOUTH_WEST": "Sud-ouest",
+            "NORTH_WEST": "Nord-ouest"
+        },
+        "rectangle": "Rectangle",
+        "notSupported": "Non pris en charge.",
+        "puzzleSolved": "Énigme résolue.",
+        "notStandingInPuzzle": "Vous n'êtes pas dans une zone d'énigme.",
+        "versionAnnounce": "CrossedEyes version : {version}",
+        "percent": "pourcent",
+        "plus": "plus",
+        "minus": "moins",
+        "unknown": "inconnu",
+        "false": "faux",
+        "true": "vrai"
+    },
+    "hints": {
+        "focused": "{hintTitle}",
+        "focusedSelected": "Sélectionné, {hintTitle}",
+        "unselected": "Désélectionné.",
+        "hintSelectLoopBeg": "Retour au premier indice, ",
+        "hintSelectLoopEnd": "Aller au dernier indice, ",
+        "noHints": "Aucun indice à mettre en évidence.",
+        "hintFilter": "Filtre d'indices",
+        "selectionFilterOn": "Filtre de sélection : activé",
+        "selectionFilterOff": "Filtre de sélection : désactivé",
+        "onItTopTemplate": "Dessus, {rest}",
+        "walkedOntoTemplate": "Marché sur : {rest}.",
+        "walkedOff": "Quitté.",
+
+        "NPC": {
+            "namedTemplate": "PNJ nommé {name}",
+            "namedDescriptionTemplate": "PNJ nommé {name}",
+            "namedPlayerTemplate": "PNJ joueur nommé {name}",
+            "interactableDescriptionTemplate": "Interactable {rest}"
+        },
+
+        "Analyzable": { "name": "Analysable : {name}", "description": "Aucun." },
+
+        "BounceBlock": {
+            "name": "Bloc rebond {dir1} {dir2}",
+            "description": "Les balles rebondissent dessus.\n Une balle venant de {dir1} rebondira vers {dir2} et inversement.",
+            "descriptionRectangle": "Les balles rebondissent dessus."
+        },
+        "BounceSwitch": { "name": "Interrupteur de rebond", "description": "Destination finale d'une balle ayant rebondi sur un Bloc rebond." },
+
+        "Chest": { "name": "Coffre", "description": "Que peut-il bien contenir ?" },
+
+        "climbableProps": {
+            "wholeMatch": {},
+            "startsWith": {
+                "cargo-box": { "name": "Caisse de transport, accessible en saut", "description": "Vous pouvez sauter dessus pour atteindre des endroits plus élevés." },
+                "carla-box": { "name": "Caisse en matière instantanée, accessible en saut", "description": "Vous pouvez sauter dessus pour atteindre des endroits plus élevés." },
+                "carla-bridge": { "name": "Passerelle en matière instantanée", "description": "Permet d'effectuer des sauts autrement impossibles." }
+            }
+        },
+        "props": {
+            "symbol": {
+                "name": "Champ d'amélioration",
+                "description": "Marchez dessus pour obtenir une amélioration !"
+            }
+        },
+        "propInteractableInfo": {
+            "name": "Panneau d'information : {rest}",
+            "description": "Panneau d'information."
+        },        "destructibles": {
+            "boxLarge": { "name": "Destructible, Grande caisse", "description": "Détruisez-la en quelques coups !" },
+            "boxMedium": { "name": "Destructible, Caisse moyenne", "description": "Détruisez-la d'un coup !" },
+            "boxMedNorth": {
+                "name": "Destructible, Caisse moyenne, Blindée sauf au nord",
+                "description": "Cette caisse est blindée ! Vous ne pouvez la frapper que par le nord."
+            },
+            "boxMedSouth": {
+                "name": "Destructible, Caisse moyenne, Blindée sauf au sud",
+                "description": "Cette caisse est blindée ! Vous ne pouvez la frapper que par le sud."
+            },
+            "boxMedEast": {
+                "name": "Destructible, Caisse moyenne, Blindée sauf à l'est",
+                "description": "Cette caisse est blindée ! Vous ne pouvez la frapper que par l'est."
+            },
+            "boxMedWest": {
+                "name": "Destructible, Caisse moyenne, Blindée sauf à l'ouest",
+                "description": "Cette caisse est blindée ! Vous ne pouvez la frapper que par l'ouest."
+            },
+            "default": { "name": "Destructible, Non cartographié", "description": "Signalez ceci au développeur !" }
+        },
+        "HiddenBlock": {
+            "stairs": {
+                "name": "Escaliers",
+                "description": "Vous pouvez les gravir pour atteindre des endroits plus élevés."
+            }
+        },
+        "enemies": {
+            "target-bot": {
+                "canShoot": { "name": "Bot cible, à frapper", "description": "Frappez-moi !" },
+                "blocker": { "name": "Bot cible, bloqueur", "description": "Ne tirez pas ! Bloquera vos balles." }
+            },
+            "baggy-kun": { "name": "Sac d'entraînement", "description": "Frappez à volonté ! Ne peut pas être déplacé et ne vous attaquera pas." }
+        },
+        "EnemyCounter": {
+            "name": "Compteur d'ennemis, ennemis restants : {enemiesLeft}",
+            "description": "Compte les ennemis restants. Déclenche quelque chose lorsqu'il atteint zéro."
+        },
+
+        "OLPlatform": { "name": "Bloc mobile", "description": "S'étend ou se rétracte lorsqu'une certaine condition est remplie." },
+        "DynamicPlatform": {
+            "name": "Plateforme mobile flottante",
+            "namePaused": "Plateforme mobile flottante, en pause",
+            "description": "Flotte dans les airs et suit un certain chemin en boucle."
+        },
+        "BallChanger": {
+            "dir": {
+                "name": "Changeur de direction de balle : {dir}",
+                "description": "Les balles changent de direction vers {dir} en le traversant."
+            },
+            "element": {
+                "name": "Changeur d'élément de balle : {element}",
+                "description": "Change l'élément des balles qui le traversent en {element}."
+            },
+            "resetSpeed": {
+                "name": "Accélérateur de balle",
+                "description": "Réinitialise la vitesse des balles qui le traversent à la normale."
+            },
+            "speed": {
+                "name": "Décélérateur de balle",
+                "description": "Ralentit les balles qui le traversent."
+            }
+        },
+
+        "Switch": {
+            "name": "Interrupteur, activé",
+            "nameOff": "Interrupteur, désactivé",
+            "description": "Frappez avec une balle ou au corps à corps pour basculer."
+        },
+        "OneTimeSwitch": { "name": "Interrupteur unique", "description": "Frappez avec une balle ou au corps à corps pour activer définitivement." },
+        "MultiHitSwitch": {
+            "name": "Interrupteur multi-frappe",
+            "description": "Frappez avec une balle ou au corps à corps {hitsToActive} fois rapidement pour activer définitivement."
+        },
+
+        "unknownDestMap": "inconnu",
+        "areaTemplate": "zone : {area}",
+        "Door": {
+            "name": "Porte vers {destMapName}, active",
+            "nameInactive": "Porte vers {destMapName}, inactive",
+            "description": "Vous transporte vers une autre carte."
+        },
+        "TeleportField": {
+            "name": "Champ de téléportation",
+            "nameWithMap": "Champ de téléportation vers {destPlaceName}{conditionalVisited}",
+            "visitedSuffix": "visité",
+            "description": "Vous téléporte quelque part.",
+            "descriptionWithMap": "Vous téléporte vers {destPlaceName}"
+        },
+        "TeleportGround": {
+            "name": "Chemin vers {destMapName}",
+            "nameInactive": "Ascenseur, inactif",
+            "description": "Vous transporte vers une autre carte."
+        },
+        "Elevator": {
+            "name": "Ascenseur",
+            "nameInactive": "Ascenseur, inactif",
+            "description": "Vous transporte vers une autre carte."
+        },
+
+        "Wall": {
+            "name": "Mur, {whatBlocks}",
+            "nameConditional": "Mur conditionnel, {whatBlocks}",
+            "blocksEverything": "bloque tout",
+            "blocksPlayers": "bloque les joueurs",
+            "blocksProjectiles": "bloque les projectiles",
+            "description": "Un mur qui peut être désactivé, {whatBlocks}"
+        }
+    },    "msg": {
+        "unknownCharacter": "Inconnu",
+        "unnamedNpc": "PNJ sans nom",
+        "regularTemplate": "{expression} {character} dit : {sentence}",
+        "silentTemplate": "{expression} {character} est silencieux{punctuation}",
+        "sideMsgTemplate": "Secondaire : {rest}",
+        "sideMsgEnd": "Fin du secondaire.",
+        "nodAsInGame": "[fait un signe de tête]",
+        "nodTemplate": "{character} fait un signe de tête.",
+        "expressionMap": {
+            "ANGRY": "En colère",
+            "ANGRY_GLASS": "En colère",
+            "ANNOYED": "Agacé",
+            "ASKING": "Interrogateur",
+            "ASTONISHED": "Stupéfait",
+            "AWAY": "",
+            "AWAY_PANIC": "Paniqué",
+            "AWESOME": "Enthousiaste",
+            "AWWW": "Admiratif",
+            "BADASS": "",
+            "BALD": "",
+            "BLANK": "",
+            "BORED": "Ennuyé",
+            "BORED_AR": "Ennuyé",
+            "BRIGHT": "Joyeux",
+            "BROKEN": "",
+            "CHAIR_BACK": "Assis sur une chaise,",
+            "CHAIR_DEFAULT": "Assis sur une chaise,",
+            "CHAIR_DOWN": "Assis sur une chaise,",
+            "CHAIR_SIDE": "Assis sur une chaise,",
+            "CHARMED": "Charmé",
+            "COMPLAINING": "Se plaignant",
+            "COMPLEX": "Complexé",
+            "CONCERNED": "Préoccupé",
+            "CONCERNED_GLASS": "Préoccupé",
+            "CONDESCENDING": "Condescendant",
+            "CONDESCENDING_AR": "Condescendant",
+            "CONFLICTED": "Conflictuel",
+            "CONFUSED": "Confus",
+            "CONFUSED_AR": "Confus",
+            "CONTENT": "Satisfait",
+            "CRAZY_GRIN": "Sourire stressé",
+            "CRAZY_GRIN2": "Sourire stressé",
+            "CRAZY_GRIN3": "Yeux plissés stressés",
+            "CRAZY_PANIC": "Panique stressée",
+            "CRAZY_PANIC2": "Panique stressée",
+            "CRAZY_SMILE": "Sourire stressé",
+            "CRY": "En pleurs",
+            "CULTURE": "Souriant, yeux fermés",
+            "CURIOUS": "Curieux",
+            "DARK": "",
+            "DEAD_INSIDE": "Mort intérieur",
+            "DEAD_INSIDE2": "Mort intérieur",
+            "DEFAULT": "",
+            "DEFAULT_AR": "",
+            "DEFAULT_GLASS": "",
+            "DENYING": "Niant",
+            "DESPERATE": "Désespéré",
+            "DETERMINED": "Déterminé",
+            "DISGUSTED": "Dégoûté",
+            "DOWN": "",
+            "DOWN_AR": "",
+            "DOWN_EYE_CLOSED": "",
+            "DOWN_GLASS": "",
+            "DOWN_PANIC": "Paniqué",
+            "DOWN_SMILE": "Souriant",
+            "DOWN_SMILE_GLASS": "Souriant",
+            "DOWN_TALK": "",
+            "DOWN_TALK_AR": "",
+            "DRAMATIC": "Dramatique",
+            "DUMBFOUNDED": "Déconcerté",
+            "EMBARRASSED": "Gêné",
+            "EVIL_GRIN": "Yeux fermés",
+            "EXCITED": "Excité",
+            "EXHAUSTED": "Épuisé",
+            "EYES_CLOSED": "Yeux fermés",
+            "FROWN": "Renfrogné",
+            "FROWN_AR": "Renfrogné",
+            "FUNNY_SMILE": "Sourire amusant",
+            "GLASS": "",
+            "GLASS_ANGRY": "En colère",
+            "GLASS_COOL": "",
+            "GLASS_DEFAULT": "",
+            "GLASS_GRIN": "Souriant",
+            "GLASS_IRRITATED": "Irrité",
+            "GLASS_NERVOUS": "Nerveux",
+            "GLASS_SMILE": "Souriant",
+            "GLASS_TOWARD": "",
+            "GLASS_UP": "",
+            "GLASS_UP_COOL": "",
+            "GLASS_UP_GRIN": "Ricanant",
+            "GLASS_WHISTLING": "Sifflotant",
+            "GRIN": "Ricanant",
+            "HAND_FIVE": "Montrant cinq doigts",
+            "HAND_FOUR": "Montrant quatre doigts",
+            "HAND_FOUR_SMUG": "Montrant quatre doigts, suffisant",
+            "HAND_ONE": "Montrant un doigt",
+            "HAND_ONE_THINKING": "Montrant un doigt, pensif",
+            "HAND_ONE_WHISTLING": "Montrant un doigt, sifflotant",
+            "HAND_POINT": "Pointant du doigt",
+            "HAND_POINT_ANGRY": "Pointant du doigt, en colère",
+            "HAND_POINT_DETERMINED": "Pointant du doigt, déterminé",
+            "HAND_POINT_JOKE": "Pointant du doigt, plaisantant",
+            "HAND_POINT_SELF": "Pointant vers soi",
+            "HAND_POINT_SELF_DETERMINED": "Pointant vers soi, déterminé",
+            "HAND_SELF_SURPRISED": "Pointant vers soi, surpris",
+            "HAND_THREE": "Montrant trois doigts",
+            "HAND_THREE_SMUG": "Montrant trois doigts, suffisant",
+            "HAND_THREE_THINKING": "Montrant trois doigts, pensif",
+            "HAND_TWO": "Montrant deux doigts",
+            "HAND_TWO_THINKING": "Montrant deux doigts, pensif",
+            "HAND_WEIRD": "Essayant de plier les doigts",
+            "HAND_WEIRD_DETERMINED": "Essayant de plier les doigts, déterminé",
+            "HAND_WEIRD_THINK": "Essayant de plier les doigts, pensif",
+            "HAND_WEIRD_TIRED": "Essayant de plier les doigts, fatigué",
+            "HAND_WTF": "Montrant des doigts tordus",
+            "HAND_WTF_SURPRISED": "Montrant des doigts tordus, surpris",
+            "HAPPY": "Heureux",
+            "HOLD": "Retenu",
+            "HOLD_HORNS": "Tenant les cornes, surpris",
+            "HOLD_HORNS_ANNOYED": "Tenant les cornes, très agacé",
+            "HOLOGRAM": "Hologramme",
+            "INNOCENT": "Innocent",
+            "INSANE": "Fou",
+            "INSANE_DOWN": "Fou, ricanant",
+            "INTENSE1": "Intense",
+            "INTENSE2": "Intense",
+            "IRRITATED": "Irrité",
+            "JOKING": "Plaisantant",
+            "LAUGH": "Riant",
+            "LAUGH_AR": "Riant",
+            "LAUGHING": "Riant",
+            "LAUGHING_DOWN": "Riant",
+            "LECTURING": "Faisant la leçon",
+            "MASKED": "Masqué",
+            "MASKED_DOWN": "Masqué",
+            "MASKED_DOWN_SMILE": "Masqué, souriant",
+            "MASKED_FROWN": "Masqué, renfrogné",
+            "MASKED_GNASH": "Masqué, grinçant des dents",
+            "MASKED_GRIN": "Masqué, ricanant",
+            "MASKED_LAUGH": "Masqué, riant",
+            "MASKED_SMILE": "Masqué, souriant",
+            "MASKED_UNPLEASED": "Masqué, mécontent",
+            "MASKED_WARN": "Masqué, surpris",
+            "MOPING": "Boudant",
+            "NERVOUS": "Nerveux",
+            "NOD": "Acquiesçant",
+            "NOD_HAPPY": "Acquiesçant joyeusement",
+            "NOD_HARD1": "Triste, acquiesçant fortement",
+            "NOD_HARD2": "Triste, acquiesçant fortement",
+            "NOD_NERVOUS": "Acquiesçant nerveusement",
+            "NOD_SAD": "Acquiesçant tristement",
+            "NODS_DEAD_INSIDE": "Acquiesçant, mort intérieur",
+            "NORM_SERIOUS": "Sérieux",
+            "NOSTALGIC": "Nostalgique",
+            "NOTIFYING": "Notifiant",
+            "PAIN": "En douleur",
+            "PAIN_EYE_CLOSED": "En douleur",
+            "PANIC": "Paniqué",
+            "PISSED": "Furieux",
+            "PLOTTING": "Complotant",
+            "PLOTTING_GLASS": "Complotant",
+            "POINTING": "Pointant héroïquement",
+            "PONDERING": "Méditatif",
+            "PONDERING_NORM": "Méditatif",
+            "PRE_CRY": "Les larmes aux yeux",
+            "PRE_CRY1": "Les larmes aux yeux",
+            "PRE_CRY2": "Les larmes aux yeux",
+            "PROUD": "Fier",
+            "RAGING": "Enragé",
+            "RANTING": "Déclamant",
+            "ROAR": "Hurlant",
+            "ROAR_GLASS": "Hurlant",
+            "ROLL_EYES": "Levant les yeux au ciel",
+            "SAD": "Triste",
+            "SAD_AWAY": "Triste",
+            "SAD_SMILE": "Sourire triste",
+            "SARCASTIC": "Sarcastique",
+            "SCARED": "Effrayé",
+            "SCEPTICAL": "Sceptique",
+            "SCEPTICAL_GLASS": "Sceptique",
+            "SCOLDING": "Agacé",
+            "SCREAM": "Criant",
+            "SERIOUS": "Sérieux",
+            "SHADOW": "Ombre",
+            "SHAKE": "Secouant la tête",
+            "SHAKE_EYE_CLOSED": "Secouant la tête, en colère",
+            "SHAKE_PANIC": "Secouant la tête, terrifié",
+            "SHAKE_SAD": "Secouant la tête, triste",
+            "SHAKE_SCARED": "Secouant la tête, effrayé",
+            "SHOCK": "Choqué",
+            "SHOCKED": "Choqué",
+            "SHOUT": "Criant",
+            "SHOUT_AR": "Criant",
+            "SHOUT_GLASS": "Criant",
+            "SHOUTING": "Criant",
+            "SHOUTING2": "Criant",
+            "SHOUT_PANIC": "Criant de panique",
+            "SHRUG": "Haussant les épaules",
+            "SIDE_SMILE": "Souriant",
+            "SKEPTICAL": "Sceptique",
+            "SLEEP": "Dormant",
+            "SLEEPING": "Dormant",
+            "SMILE": "Souriant",
+            "SMILE_AR": "Souriant",
+            "SMILE_GLASS": "Souriant",
+            "SMUG": "Suffisant",
+            "SNARL": "Grognant",
+            "STAR_POINTING": "Montrant le signe étoile",
+            "STAR_POINTING_DETERMINED": "Montrant l'étoile en langue des signes, déterminé",
+            "STAR_POINTING_PRE": "Essayant de montrer l'étoile en langue des signes",
+            "STERN": "",
+            "STERN_GLASS": "",
+            "STRICT": "En colère",
+            "SURPRISED": "Surpris",
+            "SURPRISED_AWAY": "Surpris",
+            "SURPRISED_TOWARD": "Surpris",
+            "SUSPICIOUS": "Suspicieux",
+            "SWEATY_SMILE": "Sourire nerveux",
+            "TAUNTING": "Narguant",
+            "THINKING": "Pensif",
+            "THOUGHTFUL": "Songeur",
+            "THOUGHTFUL_NORM": "Songeur",
+            "THOUGHTFUL_TOWARD": "Songeur",
+            "TIRED": "Fatigué",
+            "TOUCHED": "Touché",
+            "TOWARD": "",
+            "TOWARD_AR": "",
+            "TOWARD_GLASS": "",
+            "TOWARDS": "",
+            "TOWARD_TALK": "",
+            "TOWARD_TALK_AR": "",
+            "UNCERTAIN": "Incertain",
+            "UNHORNED": "",
+            "UP": "",
+            "UP_GRIN": "",
+            "WAKING": "Se réveillant",
+            "WATCH_OUT_BADASS": "",
+            "WEIRD_HAND": "Montrant des doigts tordus",
+            "WHISTLING": "Sifflotant",
+            "WHY": "Décontenancé",
+            "WINK": "Faisant un clin d'œil",
+            "WONDERING": "Perplexe",
+            "WORRIED": "Inquiet",
+            "WRAP_HEAD": "Terrifié, se tenant la tête",
+            "WRAP_SHOULDER": "Terrifié, se tenant les épaules",
+            "YELL": "Hurlant"
+        }
+    }
+}
