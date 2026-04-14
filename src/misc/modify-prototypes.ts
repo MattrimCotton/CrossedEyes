@@ -33,7 +33,7 @@ Array.prototype.flat ??= function <T>(this: T[][]): T[] {
     return this.reduce((acc, val) => acc.concat(val), [])
 }
 
-Array.prototype.flatMap ??= function (callback) {
+Array.prototype.flatMap ??= function (callback: any) {
     return this.map(callback).flat()
 }
 

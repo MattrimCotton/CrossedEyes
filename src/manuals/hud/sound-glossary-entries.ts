@@ -127,14 +127,14 @@ export function getSoundGlossaryEntries() {
             enemyDeath: {
                 config: {
                     eventSteps: [
-                        { volume: 0.5, global: false, loop: false, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/explosion-woosh.ogg' },
-                        { volume: 0.7, global: false, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-1.ogg' },
+                        { volume: 0.5, loop: false, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/explosion-woosh.ogg' },
+                        { volume: 0.7, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-1.ogg' },
                         { time: 0.13, type: 'WAIT' },
-                        { volume: 0.7, global: false, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-2.ogg' },
+                        { volume: 0.7, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-2.ogg' },
                         { time: 0.13, type: 'WAIT' },
-                        { volume: 0.7, global: false, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-3.ogg' },
+                        { volume: 0.7, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-3.ogg' },
                         { time: 0.13, type: 'WAIT' },
-                        { volume: 0.7, global: false, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-4.ogg' },
+                        { volume: 0.7, loop: false, variance: 0.2, type: 'PLAY_SOUND', sound: 'media/sound/battle/airon/exposion-enemy-small-4.ogg' },
                         { time: 1.4, type: 'WAIT' },
                     ],
                 },

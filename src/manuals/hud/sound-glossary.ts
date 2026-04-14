@@ -224,10 +224,10 @@ export class SoundGlossary {
                 menu.stopSound()
                 return { skipSounds: true }
             },
-            onContentCreation(index, settings) {
+            onContentCreation() {
                 this.currentList && this.currentList.clear()
                 this.currentGroup && this.currentGroup.clear()
-                this.parent(index, settings)
+                const ret = this.parent()
                 const orig_doButtonTraversal = this.currentGroup.doButtonTraversal
                 this.currentGroup.doButtonTraversal = function (this: sc.ButtonGroup, inputRegained: boolean) {
                     if (menu.isEntrySelected) {
@@ -236,6 +236,7 @@ export class SoundGlossary {
                         menu.updateSound()
                     } else orig_doButtonTraversal.bind(this)(inputRegained)
                 }
+                return ret
             },
             onCreateListEntries(list, buttonGroup, type, _sort) {
                 list.clear()

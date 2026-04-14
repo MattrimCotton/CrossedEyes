@@ -83,6 +83,7 @@ function optionValueToString(entry: sc.OptionDefinition | GuiOption, val: string
         case 'INFO':
             return ['', '']
     }
+    return ['', '']
 }
 
 let lastButtonGroup: string | undefined

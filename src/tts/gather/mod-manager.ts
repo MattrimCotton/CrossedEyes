@@ -32,8 +32,8 @@ modmanager.gui.ListEntry.inject({
         speakI(str)
 
         let desc = `${m.description ?? ''}.\n`
-        if (sm) desc += `${Lang.menu.modMenu.tags}: ${sm.tags.join(': ')}.\n`
-        desc += `${(sm?.authors.length ?? 0) > 1 ? Lang.menu.modMenu.authors : Lang.menu.modMenu.author}: ${sm ? sm.authors.join(': ') : Lang.misc.unknown}.\n`
+        if (sm?.tags) desc += `${Lang.menu.modMenu.tags}: ${sm.tags.join(': ')}.\n`
+        desc += `${(sm?.authors?.length ?? 0) > 1 ? Lang.menu.modMenu.authors : Lang.menu.modMenu.author}: ${sm?.authors ? sm.authors.join(': ') : Lang.misc.unknown}.\n`
         if (sm) desc += `${Lang.menu.modMenu.stars}: ${sm.stars}.\n`
         desc += `${Lang.menu.modMenu.version}: ${m.version.replace(/\./g, ': ')}.\n`
         if (sm?.lastUpdateTimestamp)

@@ -8,8 +8,8 @@ declare global {
             crossedEyesHudButton: sc.ButtonGui
         }
         enum MENU_SUBMENU {
-            CROSSEDEYESHUD_MENU,
-            CROSSEDEYESHUD_SOUNDGLOSSARY,
+            CROSSEDEYESHUD_MENU = 385943,
+            CROSSEDEYESHUD_SOUNDGLOSSARY = 385944,
         }
 
         interface CrossedEyesHudMenu extends sc.BaseMenu {

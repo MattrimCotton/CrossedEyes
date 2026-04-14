@@ -23,7 +23,7 @@ declare global {
 ig.ENTITY.Enemy.inject({
     getQuickMenuSettings() {
         if (!Opts.hints) return this.parent!()
-        const isProperEnemy: boolean = this.params && this.visibility.analyzable && sc.combat.isEnemyAnalyzable(this.enemyName)
+        const isProperEnemy = this.params && this.visibility.analyzable && sc.combat.isEnemyAnalyzable(this.enemyName)
         return isProperEnemy
             ? { type: 'Enemy', disabled: false }
             : {

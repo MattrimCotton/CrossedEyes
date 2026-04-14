@@ -23,9 +23,9 @@ sc.InputForcer.inject({
 
 /* fix sc.InputForcer not accepting Gamepad X as a attack button and forcing R1 */
 sc.Control.inject({
-    fullScreenAttacking(): boolean {
+    fullScreenAttacking() {
         return sc.control.autoControl
-            ? sc.control.autoControl.get('attacking')
+            ? (sc.control.autoControl.get('attacking') as boolean)
             : ig.input.pressed('aim') ||
                   ig.gamepad.isButtonPressed(sc.control._getAttackButton()) ||
                   /* fix here -> */ ig.gamepad.isButtonPressed(sc.control._getMeleeButton())
