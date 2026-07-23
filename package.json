@@ -1,16 +1,14 @@
 {
     "name": "crossedeyes",
     "version": "0.6.4",
+    "description": "Accessibility mod for CrossCode",
+    "license": "GPLv3",
     "scripts": {
         "start": "npx esbuild --target=es2018 --format=esm --platform=node --bundle --sourcemap=inline --outfile=plugin.js src/plugin.ts",
         "watch": "npx esbuild --target=es2018 --format=esm --platform=node --bundle --sourcemap=inline --watch --outfile=plugin.js src/plugin.ts",
         "build": "npx esbuild --target=es2018 --format=esm --platform=node --bundle --outfile=plugin.js --minify-syntax --minify-whitespace src/plugin.ts",
-        "format": "prettier ./src -w; prettier -w ./lang; npx prettier ./assets -w --tab-width 4 --no-semi --print-width 500 --bracket-same-line"
+        "format": "oxfmt"
     },
-    "license": "GPLv3",
-    "ccmodHumanName": "CrossedEyes",
-    "description": "Accessibility mod for CrossCode",
-    "plugin": "plugin.js",
     "devDependencies": {
         "@types/jquery": "^3.5.29",
         "@types/node": "^11.6.0",
@@ -20,9 +18,11 @@
         "crosscode-demonizer": "github:krypciak/crosscode-demonizer",
         "esbuild": "^0.20.1",
         "nax-ccuilib": "github:krypciak/nax-ccuilib",
-        "prettier": "3.2.5",
+        "oxfmt": "^0.60.0",
         "typescript": "^6.0.2",
         "ultimate-crosscode-typedefs": "github:krypciak/ultimate-crosscode-typedefs",
         "ws": "^8.16.0"
-    }
+    },
+    "ccmodHumanName": "CrossedEyes",
+    "plugin": "plugin.js"
 }
