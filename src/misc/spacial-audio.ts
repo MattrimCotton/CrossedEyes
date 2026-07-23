@@ -170,7 +170,7 @@ ig.SoundManager.inject({
         }
 
         const requests: ig.SoundHandleBase[] = group.requests
-        for (let i = requests.length; i--; ) {
+        for (let i = requests.length; i--;) {
             if (requests[i].isLooping()) {
                 this.playSoundHandle(requests[i], group)
                 requests.splice(i, 1)
@@ -179,7 +179,7 @@ ig.SoundManager.inject({
 
         let foundRequest: ig.SoundHandleBase | undefined
         let leastDistance: number = -1
-        for (let i = requests.length; i--; ) {
+        for (let i = requests.length; i--;) {
             const request = requests[i]
             let distance: number = 0
             if (request.pos) {
@@ -195,7 +195,7 @@ ig.SoundManager.inject({
                 foundRequest = requests[i]
             }
         }
-        for (let i = group.playing.length; i--; ) {
+        for (let i = group.playing.length; i--;) {
             if (!group.playing[i].isLooping()) {
                 group.playing[i].stop()
             }
