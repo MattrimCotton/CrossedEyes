@@ -12,13 +12,14 @@ import { HEnemy, HEnemyCounter } from './hints/enemy'
 import { HProp } from './hints/prop'
 import { HBallChanger, HDynamicPlatform, HOLPlatform } from './hints/rhombus-puzzle'
 import { HMultiHitSwitch, HOneTimeSwitch, HSwitch } from './hints/switches'
-import { HDoor, HElevator, HTeleportField, HTeleportGround } from './hints/tprs'
-import { HWalls } from './hints/walls'
+import { HItemDestruct, HRegenDestruct, HWaveTeleport } from './hints/themed-destructibles'
+import { HDoor, HElevator, HTeleportCentral, HTeleportField, HTeleportGround, HTeleportStairs } from './hints/tprs'
+import { HWallSegment, HWalls } from './hints/walls'
 import { interrupt, speakIC } from '../tts/gather/api'
 import type { PuzzleSelection } from 'cc-blitzkrieg/types/puzzle-selection'
 import type { Selection } from 'cc-blitzkrieg/types/selection'
 import { BattleSelection } from 'cc-blitzkrieg/types/battle-selection'
-import { HHiddenBlock } from './hints/hidden-block'
+import { HHiddenBlock, HHiddenSkyBlock } from './hints/hidden-block'
 import { Rect } from '../misc/geometry'
 
 declare global {
@@ -84,6 +85,13 @@ const puzzleTypes = [
     HDynamicPlatform,
     HBallChanger,
     HHiddenBlock,
+    HWallSegment,
+    HHiddenSkyBlock,
+    HItemDestruct,
+    HRegenDestruct,
+    HWaveTeleport,
+    HTeleportCentral,
+    HTeleportStairs,
 ] as const satisfies (new () => HintBase)[]
 
 export class HintSystem {

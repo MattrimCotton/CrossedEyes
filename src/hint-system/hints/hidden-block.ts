@@ -32,3 +32,25 @@ export class HHiddenBlock implements HintBase {
         return this.getLang(e)!
     }
 }
+
+/* HiddenSkyBlock is a separate class (`interface HiddenSkyBlock extends ig.Entity {}`), not a
+ * subclass of HiddenBlock, despite the shared file/name -- it gets none of the hint above.
+ * Real usage (arena/boss/frobbit-boss.json) is a long, thin NPBLOCK/RECTANGLE barrier, i.e. an
+ * invisible aerial wall/platform rather than the stairs-specific case HiddenBlock covers. */
+export class HHiddenSkyBlock implements HintBase {
+    entryName = 'HiddenSkyBlock' as const
+
+    constructor() {
+        /* run in prestart */
+        const self = this
+        ig.ENTITY.HiddenSkyBlock?.inject({
+            getQuickMenuSettings(): Omit<sc.QuickMenuTypesBaseSettings, 'entity'> {
+                return { type: 'Hints', hintName: self.entryName, hintType: 'Puzzle', disabled: !Opts.hints }
+            },
+        })
+    }
+    getDataFromEntity(e: ig.Entity): HintData {
+        if (!(e instanceof ig.ENTITY.HiddenSkyBlock)) throw new Error()
+        return Lang.hints.HiddenSkyBlock
+    }
+}

@@ -199,3 +199,49 @@ export class HElevator implements HintBase {
         return lang
     }
 }
+
+/* TeleportCentral and TeleportStairs are also "things that move me from map to another map", same
+ * family as Door/TeleportGround/TeleportField above, but they're kept deliberately separate from
+ * TprsFlagSupported/filterTprs/getDestMapName here rather than folded into that machinery: those
+ * rely on hooking each entity's own entry-trigger method (open/onInteraction/collideWith) to flag
+ * "just visited" for the destination-name reveal, and I couldn't confirm TeleportCentral's or
+ * TeleportStairs' equivalent trigger method from the typedefs alone without risking a wrong guess
+ * that silently breaks the existing, working visited-tracking for the other three. These two get
+ * a simpler, static hint instead: it tells a blind player the transition point exists at all
+ * (previously zero indication of that), without claiming a resolved destination name I can't
+ * verify gets flagged correctly. */
+export class HTeleportCentral implements HintBase {
+    entryName = 'TeleportCentral' as const
+
+    constructor() {
+        /* run in prestart */
+        const self = this
+        ig.ENTITY.TeleportCentral.inject({
+            getQuickMenuSettings(): Omit<sc.QuickMenuTypesBaseSettings, 'entity'> {
+                return { type: 'Hints', hintName: self.entryName, hintType: 'Puzzle', disabled: !Opts.hints }
+            },
+        })
+    }
+    getDataFromEntity(e: ig.Entity): HintData {
+        if (!(e instanceof ig.ENTITY.TeleportCentral)) throw new Error()
+        return Lang.hints.TeleportCentral
+    }
+}
+
+export class HTeleportStairs implements HintBase {
+    entryName = 'TeleportStairs' as const
+
+    constructor() {
+        /* run in prestart */
+        const self = this
+        ig.ENTITY.TeleportStairs.inject({
+            getQuickMenuSettings(): Omit<sc.QuickMenuTypesBaseSettings, 'entity'> {
+                return { type: 'Hints', hintName: self.entryName, hintType: 'Puzzle', disabled: !Opts.hints }
+            },
+        })
+    }
+    getDataFromEntity(e: ig.Entity): HintData {
+        if (!(e instanceof ig.ENTITY.TeleportStairs)) throw new Error()
+        return Lang.hints.TeleportStairs
+    }
+}

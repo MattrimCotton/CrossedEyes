@@ -536,6 +536,7 @@
                 "description": "You can climb them to get to higher places."
             }
         },
+        "HiddenSkyBlock": { "name": "Hidden Barrier", "description": "An invisible barrier." },
         "enemies": {
             "target-bot": {
                 "canShoot": { "name": "Target Bot, shootable", "description": "Shoot me!" },
@@ -572,6 +573,12 @@
                 "description": "Slows down balls that pass through it."
             }
         },
+
+        "ItemDestruct": { "name": "Breakable Item", "description": "Break it to get what's inside." },
+        "RegenDestruct": { "name": "Regenerating Obstacle", "description": "Can be destroyed, but comes back after a while." },
+        "WaveTeleport": { "name": "Wave Teleport", "description": "A teleport point tied to the wave element." },
+        "TeleportCentral": { "name": "Area Transition", "description": "Walk into it to travel to another area." },
+        "TeleportStairs": { "name": "Stairway", "description": "Leads to another area." },
 
         "Switch": {
             "name": "Switch, on",
@@ -614,6 +621,7 @@
             "nameConditional": "Conditional Wall, {whatBlocks}",
             "blocksEverything": "blocks everything",
             "blocksPlayers": "blocks players",
+            "blocksNonPlayers": "blocks everything except you",
             "blocksProjectiles": "blocks projectiles",
             "description": "A wall that can be turned off, {whatBlocks}"
         }
