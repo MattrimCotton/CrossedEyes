@@ -577,6 +577,14 @@
             "name": "Interrupteur multi-frappe",
             "description": "Frappez avec une balle ou au corps à corps {hitsToActive} fois rapidement pour activer définitivement."
         },
+        "FloorSwitch": {
+            "name": "Plaque au sol, activée",
+            "nameOff": "Plaque au sol, désactivée",
+            "description": "Marchez dessus pour basculer.",
+            "descriptionWhileOnTop": "Active uniquement tant que quelque chose se trouve dessus."
+        },
+        "PushPullBlock": { "name": "Bloc à pousser/tirer", "description": "Poussez-le en marchant contre lui, ou maintenez interagir pour le tirer." },
+        "JumpPanel": { "name": "Panneau de saut", "description": "Tenez-vous dessus pour être propulsé vers le haut." },
 
         "unknownDestMap": "inconnu",
         "areaTemplate": "zone : {area}",
