@@ -60,3 +60,25 @@ export class HMultiHitSwitch implements HintBase {
         return lang
     }
 }
+
+export class HFloorSwitch implements HintBase {
+    entryName = 'FloorSwitch' as const
+
+    constructor() {
+        /* run in prestart */
+        const self = this
+        ig.ENTITY.FloorSwitch.inject({
+            getQuickMenuSettings(): Omit<sc.QuickMenuTypesBaseSettings, 'entity'> {
+                return { type: 'Hints', hintName: self.entryName, hintType: 'Puzzle', disabled: !Opts.hints, aimBounceWhitelist: true }
+            },
+        })
+    }
+    getDataFromEntity(e: ig.Entity): HintData {
+        if (!(e instanceof ig.ENTITY.FloorSwitch)) throw new Error()
+
+        const lang = { ...Lang.hints.FloorSwitch }
+        if (!e.isOn) lang.name = lang.nameOff
+        if (e.switchType == sc.FLOOR_SWITCH_TYPE.WHILE_ON_TOP) lang.description = lang.descriptionWhileOnTop
+        return lang
+    }
+}

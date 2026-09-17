@@ -583,6 +583,14 @@
             "name": "Multi Hit Switch",
             "description": "Hit with a ball or a melee {hitsToActive} times in rapid succession to activate permanently."
         },
+        "FloorSwitch": {
+            "name": "Floor Switch, on",
+            "nameOff": "Floor Switch, off",
+            "description": "Step on it to toggle.",
+            "descriptionWhileOnTop": "Only active while something is standing on it."
+        },
+        "PushPullBlock": { "name": "Push-Pull Block", "description": "Push against it to push it, hold interact while facing it to pull it." },
+        "JumpPanel": { "name": "Jump Panel", "description": "Stand on it to be launched upward." },
 
         "unknownDestMap": "unknown",
         "areaTemplate": "area: {area}",

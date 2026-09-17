@@ -9,9 +9,11 @@ import { HChest } from './hints/chest'
 import { HClimbableTerrain } from './hints/climbable-terrain'
 import { HDestructible } from './hints/destructible'
 import { HEnemy, HEnemyCounter } from './hints/enemy'
+import { HJumpPanel } from './hints/jump-panel'
 import { HProp } from './hints/prop'
+import { HPushPullBlock } from './hints/push-pull-block'
 import { HBallChanger, HDynamicPlatform, HOLPlatform } from './hints/rhombus-puzzle'
-import { HMultiHitSwitch, HOneTimeSwitch, HSwitch } from './hints/switches'
+import { HFloorSwitch, HMultiHitSwitch, HOneTimeSwitch, HSwitch } from './hints/switches'
 import { HDoor, HElevator, HTeleportField, HTeleportGround } from './hints/tprs'
 import { HWalls } from './hints/walls'
 import { interrupt, speakIC } from '../tts/gather/api'
@@ -84,6 +86,9 @@ const puzzleTypes = [
     HDynamicPlatform,
     HBallChanger,
     HHiddenBlock,
+    HFloorSwitch,
+    HPushPullBlock,
+    HJumpPanel,
 ] as const satisfies (new () => HintBase)[]
 
 export class HintSystem {
