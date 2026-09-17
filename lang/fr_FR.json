@@ -566,6 +566,17 @@
                 "description": "Ralentit les balles qui le traversent."
             }
         },
+        "ElementPole": { "name": "Poteau élémentaire", "description": "Frappez-le avec une balle élémentaire pour le charger." },
+        "ElementPoleDest": {
+            "name": "Destination du poteau élémentaire",
+            "description": "Complète le puzzle une fois que tous les poteaux du groupe sont chargés.",
+            "descriptionElement": "Complète le puzzle une fois que tous les poteaux du groupe sont chargés avec {element}."
+        },
+        "ElementShieldSrc": {
+            "name": "Bouclier élémentaire",
+            "nameElement": "Bouclier élémentaire : {element}",
+            "description": "Émet un bouclier qui bloque les balles d'un élément différent."
+        },
 
         "Switch": {
             "name": "Interrupteur, activé",
