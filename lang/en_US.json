@@ -572,6 +572,17 @@
                 "description": "Slows down balls that pass through it."
             }
         },
+        "ElementPole": { "name": "Element Pole", "description": "Hit it with an elemental ball to charge it." },
+        "ElementPoleDest": {
+            "name": "Element Pole Destination",
+            "description": "Completes the puzzle once all poles in its group are charged.",
+            "descriptionElement": "Completes the puzzle once all poles in its group are charged with {element}."
+        },
+        "ElementShieldSrc": {
+            "name": "Element Shield",
+            "nameElement": "Element Shield: {element}",
+            "description": "Emits a shield that blocks balls of a mismatched element."
+        },
 
         "Switch": {
             "name": "Switch, on",

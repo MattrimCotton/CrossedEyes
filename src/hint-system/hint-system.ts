@@ -8,6 +8,7 @@ import { HBounceBlock, HBounceSwitch } from './hints/bounce-puzzles'
 import { HChest } from './hints/chest'
 import { HClimbableTerrain } from './hints/climbable-terrain'
 import { HDestructible } from './hints/destructible'
+import { HElementPole, HElementPoleDest, HElementShieldSrc } from './hints/element-pole'
 import { HEnemy, HEnemyCounter } from './hints/enemy'
 import { HProp } from './hints/prop'
 import { HBallChanger, HDynamicPlatform, HOLPlatform } from './hints/rhombus-puzzle'
@@ -84,6 +85,9 @@ const puzzleTypes = [
     HDynamicPlatform,
     HBallChanger,
     HHiddenBlock,
+    HElementPole,
+    HElementPoleDest,
+    HElementShieldSrc,
 ] as const satisfies (new () => HintBase)[]
 
 export class HintSystem {
