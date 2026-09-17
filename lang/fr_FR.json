@@ -578,8 +578,8 @@
             "description": "Frappez avec une balle ou au corps à corps {hitsToActive} fois rapidement pour activer définitivement."
         },
         "FloorSwitch": {
-            "name": "Plaque au sol, activée",
-            "nameOff": "Plaque au sol, désactivée",
+            "name": "Interrupteur au sol, activé",
+            "nameOff": "Interrupteur au sol, désactivé",
             "description": "Marchez dessus pour basculer.",
             "descriptionWhileOnTop": "Active uniquement tant que quelque chose se trouve dessus."
         },
