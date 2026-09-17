@@ -578,6 +578,41 @@
             "description": "Émet un bouclier qui bloque les balles d'un élément différent."
         },
 
+        "Compressor": { "name": "Compresseur", "description": "Tire périodiquement une balle compressée." },
+        "AntiCompressor": { "name": "Anti-compresseur", "description": "Détruit les balles compressées qu'il touche." },
+        "CompressorBouncer": { "name": "Rebond de compresseur, orienté {dir}", "description": "Renvoie les balles compressées dans la direction vers laquelle il est orienté." },
+        "RotateBlocker": { "name": "Bloqueur rotatif", "description": "Un obstacle rotatif pour les balles et les balles compressées." },
+        "SlidingBlock": { "name": "Bloc glissant", "description": "Glisse lorsqu'il est frappé et s'arrête en cas de collision." },
+        "Magnet": { "name": "Aimant", "description": "Attire les entités proches lorsqu'il est actif." },
+        "TeslaCoil": {
+            "name": "Bobine Tesla",
+            "nameExtender": "Extension de bobine Tesla",
+            "description": "Se charge au contact d'une balle de choc, puis décharge l'électricité vers les bobines et interrupteurs proches."
+        },
+
+        "Lorry": { "name": "Wagonnet", "description": "Un wagonnet qui se déplace sur des rails lorsqu'il est déclenché. Montez dessus pour traverser." },
+        "LorryRail": { "name": "Rail de wagonnet", "description": "Voie sur laquelle circule un wagonnet." },
+        "LorryRespawner": { "name": "Réinitialiseur de wagonnet", "description": "Replace un wagonnet à ce point." },
+
+        "WaterBlock": { "name": "Bloc d'eau", "description": "Une zone d'eau qui peut changer d'état au fil du temps." },
+        "WaterBubblePanel": { "name": "Panneau à bulle d'eau", "description": "Fait apparaître une bulle d'eau sur laquelle on peut monter ou interagir." },
+        "SteamOven": { "name": "Four à vapeur", "description": "Envoie périodiquement de la vapeur dans les tuyaux connectés." },
+        "SteamPipe": { "name": "Tuyau à vapeur", "description": "Transporte la vapeur depuis un four. Peut bloquer ou pousser ce qui est pris dans le jet." },
+        "SteamTurnout": { "name": "Aiguillage à vapeur", "description": "Change la direction vers laquelle les tuyaux à vapeur connectés sont dirigés." },
+
+        "FerroSpot": {
+            "name": "Point ferro",
+            "nameSource": "Point ferro, source",
+            "description": "Un point d'ancrage pour l'objet de puzzle ferro."
+        },
+        "FerroLine": { "name": "Ligne ferro", "description": "Un rail sur lequel se déplace l'objet de puzzle ferro." },
+        "FerroRespawner": { "name": "Réinitialiseur ferro", "description": "Replace l'objet de puzzle ferro à ce point." },
+        "BossPlatform": { "name": "Plateforme de boss", "description": "Plateforme utilisée pendant un combat de boss." },
+
+        "KeyPanel": { "name": "Panneau à clé", "description": "Se déverrouille avec un objet clé." },
+        "QuicksandHole": { "name": "Trou de sable mouvant", "description": "Y tomber vous fait chuter vers une autre zone." },
+        "RespawnBlocker": { "name": "Bloqueur de réapparition", "description": "Empêche les objets détruits dans cette zone de réapparaître." },
+
         "Switch": {
             "name": "Interrupteur, activé",
             "nameOff": "Interrupteur, désactivé",
