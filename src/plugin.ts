@@ -79,6 +79,7 @@ export default class CrossedEyes implements PluginClass {
     async poststart() {
         CrossedEyes.initPoststart.forEach(p => p())
         await import('./misc/log-keybinding')
+        await import('./tts/gather/cheats-menu') /* optional third-party mod, must run after its postload script defines sc.CheatsMenu */
 
         if (!ig.isdemo && localStorage.getItem('crossedeyesDev') == 'true') TestMap.start()
     }
