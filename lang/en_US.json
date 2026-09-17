@@ -573,6 +573,41 @@
             }
         },
 
+        "Compressor": { "name": "Compressor", "description": "Periodically fires a compressed ball." },
+        "AntiCompressor": { "name": "Anti-Compressor", "description": "Destroys compressed balls it comes in contact with." },
+        "CompressorBouncer": { "name": "Compressor Bouncer, facing {dir}", "description": "Bounces compressed balls back in the direction it's facing." },
+        "RotateBlocker": { "name": "Rotate Blocker", "description": "A rotating obstacle for balls and compressed balls." },
+        "SlidingBlock": { "name": "Sliding Block", "description": "Slides when hit and stops when it collides with something." },
+        "Magnet": { "name": "Magnet", "description": "Pulls nearby entities towards it when active." },
+        "TeslaCoil": {
+            "name": "Tesla Coil",
+            "nameExtender": "Tesla Coil Extender",
+            "description": "Charges when hit with a shock ball, then discharges electricity to nearby coils and switches."
+        },
+
+        "Lorry": { "name": "Lorry", "description": "A minecart that moves along rails when triggered. Ride it to get across." },
+        "LorryRail": { "name": "Lorry Rail", "description": "Track that a lorry rides along." },
+        "LorryRespawner": { "name": "Lorry Respawner", "description": "Resets a lorry back to this point." },
+
+        "WaterBlock": { "name": "Water Block", "description": "A patch of water that can change state over time." },
+        "WaterBubblePanel": { "name": "Water Bubble Panel", "description": "Spawns a water bubble you can ride or interact with." },
+        "SteamOven": { "name": "Steam Oven", "description": "Periodically vents steam into connected pipes." },
+        "SteamPipe": { "name": "Steam Pipe", "description": "Carries steam from an oven. Can block or push things caught in the vent." },
+        "SteamTurnout": { "name": "Steam Turnout", "description": "Switches which direction connected steam pipes route to." },
+
+        "FerroSpot": {
+            "name": "Ferro Spot",
+            "nameSource": "Ferro Spot, source",
+            "description": "A docking point for the ferro puzzle object."
+        },
+        "FerroLine": { "name": "Ferro Line", "description": "A rail that the ferro puzzle object travels along." },
+        "FerroRespawner": { "name": "Ferro Respawner", "description": "Resets the ferro puzzle object back to this point." },
+        "BossPlatform": { "name": "Boss Platform", "description": "Platform used during a boss fight." },
+
+        "KeyPanel": { "name": "Key Panel", "description": "Unlocked with a key item." },
+        "QuicksandHole": { "name": "Quicksand Hole", "description": "Falling into it drops you to another area." },
+        "RespawnBlocker": { "name": "Respawn Blocker", "description": "Prevents destroyed objects in this area from respawning." },
+
         "Switch": {
             "name": "Switch, on",
             "nameOff": "Switch, off",

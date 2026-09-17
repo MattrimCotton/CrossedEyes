@@ -9,11 +9,15 @@ import { HChest } from './hints/chest'
 import { HClimbableTerrain } from './hints/climbable-terrain'
 import { HDestructible } from './hints/destructible'
 import { HEnemy, HEnemyCounter } from './hints/enemy'
+import { HBossPlatform, HFerroLine, HFerroRespawner, HFerroSpot, HKeyPanel, HQuicksandHole, HRespawnBlocker } from './hints/final-dungeon-misc'
+import { HLorry, HLorryRail, HLorryRespawner } from './hints/lorry'
+import { HAntiCompressor, HCompressor, HCompressorBouncer, HMagnet, HRotateBlocker, HSlidingBlock, HTeslaCoil } from './hints/movement-puzzles'
 import { HProp } from './hints/prop'
 import { HBallChanger, HDynamicPlatform, HOLPlatform } from './hints/rhombus-puzzle'
 import { HMultiHitSwitch, HOneTimeSwitch, HSwitch } from './hints/switches'
 import { HDoor, HElevator, HTeleportField, HTeleportGround } from './hints/tprs'
 import { HWalls } from './hints/walls'
+import { HSteamOven, HSteamPipe, HSteamTurnout, HWaterBlock, HWaterBubblePanel } from './hints/water-steam'
 import { interrupt, speakIC } from '../tts/gather/api'
 import type { PuzzleSelection } from 'cc-blitzkrieg/types/puzzle-selection'
 import type { Selection } from 'cc-blitzkrieg/types/selection'
@@ -84,6 +88,28 @@ const puzzleTypes = [
     HDynamicPlatform,
     HBallChanger,
     HHiddenBlock,
+    HCompressor,
+    HAntiCompressor,
+    HCompressorBouncer,
+    HRotateBlocker,
+    HSlidingBlock,
+    HMagnet,
+    HTeslaCoil,
+    HLorry,
+    HLorryRail,
+    HLorryRespawner,
+    HWaterBlock,
+    HWaterBubblePanel,
+    HSteamOven,
+    HSteamPipe,
+    HSteamTurnout,
+    HFerroSpot,
+    HFerroLine,
+    HFerroRespawner,
+    HBossPlatform,
+    HKeyPanel,
+    HQuicksandHole,
+    HRespawnBlocker,
 ] as const satisfies (new () => HintBase)[]
 
 export class HintSystem {
