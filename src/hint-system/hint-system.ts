@@ -4,6 +4,7 @@ import CrossedEyes from '../plugin'
 import { SoundManager } from '../sound-manager'
 import { SpecialAction } from '../special-action'
 import { HAnalyzable } from './hints/analyzable'
+import { HBombPanel, HGroupSwitch, HPushPullDest, HWavePushPullBlock } from './hints/bomb-group-dest'
 import { HBounceBlock, HBounceSwitch } from './hints/bounce-puzzles'
 import { HChest } from './hints/chest'
 import { HClimbableTerrain } from './hints/climbable-terrain'
@@ -84,6 +85,10 @@ const puzzleTypes = [
     HDynamicPlatform,
     HBallChanger,
     HHiddenBlock,
+    HBombPanel,
+    HPushPullDest,
+    HWavePushPullBlock,
+    HGroupSwitch,
 ] as const satisfies (new () => HintBase)[]
 
 export class HintSystem {

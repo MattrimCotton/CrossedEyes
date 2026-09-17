@@ -573,6 +573,11 @@
             }
         },
 
+        "BombPanel": { "name": "Bomb Panel", "description": "Spawns a bomb you can pick up and throw." },
+        "PushPullDest": { "name": "Push-Pull Block Destination", "description": "Push a Push-Pull Block here to complete the puzzle." },
+        "WavePushPullBlock": { "name": "Wave Push-Pull Block", "description": "Push against it to push it. Phases in and out with wave ball hits." },
+        "GroupSwitch": { "name": "Group Switch", "description": "Part of a group of switches that must be activated together." },
+
         "Switch": {
             "name": "Switch, on",
             "nameOff": "Switch, off",
