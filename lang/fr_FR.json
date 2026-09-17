@@ -613,6 +613,11 @@
         "QuicksandHole": { "name": "Trou de sable mouvant", "description": "Y tomber vous fait chuter vers une autre zone." },
         "RespawnBlocker": { "name": "Bloqueur de réapparition", "description": "Empêche les objets détruits dans cette zone de réapparaître." },
 
+        "BombPanel": { "name": "Panneau à bombe", "description": "Fait apparaître une bombe que vous pouvez ramasser et lancer." },
+        "PushPullDest": { "name": "Destination du bloc à pousser/tirer", "description": "Poussez un bloc à pousser/tirer jusqu'ici pour compléter le puzzle." },
+        "WavePushPullBlock": { "name": "Bloc à pousser/tirer d'onde", "description": "Poussez-le en marchant contre lui. Se matérialise et se dématérialise au contact d'une balle d'onde." },
+        "GroupSwitch": { "name": "Interrupteur de groupe", "description": "Fait partie d'un groupe d'interrupteurs qui doivent être activés ensemble." },
+
         "Switch": {
             "name": "Interrupteur, activé",
             "nameOff": "Interrupteur, désactivé",
